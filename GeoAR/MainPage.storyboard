@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nCf-fI-d4R">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ABb-5I-Oz6">
+            <objects>
+                <viewController id="nCf-fI-d4R" customClass="ViewController" customModule="GeoAR" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iOL-fF-RVd"/>
+                        <viewControllerLayoutGuide type="bottom" id="FhV-JK-Iki"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="c6R-ko-P8X">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WUa-QL-pYH" userLabel="Scene View" customClass="ARSCNView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HQp-wL-op2" userLabel="Controls Container View">
+                                        <rect key="frame" x="0.0" y="358" width="375" height="309"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dPv-YH-rbJ" customClass="AGSMapView">
+                                                <rect key="frame" x="8" y="50" width="359" height="247"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crosshairs" translatesAutoresizingMaskIntoConstraints="NO" id="W4s-Or-eqn">
+                                                        <rect key="frame" x="155" y="99" width="50" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="YJK-ge-juh"/>
+                                                            <constraint firstAttribute="width" constant="50" id="cmy-wr-uLf"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <gestureRecognizers/>
+                                                <constraints>
+                                                    <constraint firstItem="W4s-Or-eqn" firstAttribute="centerX" secondItem="dPv-YH-rbJ" secondAttribute="centerX" id="KFI-cJ-gTh"/>
+                                                    <constraint firstItem="W4s-Or-eqn" firstAttribute="centerY" secondItem="dPv-YH-rbJ" secondAttribute="centerY" id="fE3-bX-Qha"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Move the camera" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UmD-gx-zXk">
+                                                <rect key="frame" x="87" y="11" width="200" height="27"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="A5w-Pf-g4z"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="dPv-YH-rbJ" firstAttribute="leading" secondItem="HQp-wL-op2" secondAttribute="leadingMargin" id="LbC-R6-HDS"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="dPv-YH-rbJ" secondAttribute="trailing" id="cur-en-r5C"/>
+                                            <constraint firstAttribute="height" constant="309" id="gQt-Mt-VUw"/>
+                                            <constraint firstItem="UmD-gx-zXk" firstAttribute="top" secondItem="HQp-wL-op2" secondAttribute="top" constant="11" id="gTi-fv-8Nz"/>
+                                            <constraint firstItem="dPv-YH-rbJ" firstAttribute="top" secondItem="HQp-wL-op2" secondAttribute="topMargin" constant="42" id="lWa-oS-ncH"/>
+                                            <constraint firstItem="UmD-gx-zXk" firstAttribute="centerX" secondItem="HQp-wL-op2" secondAttribute="centerX" id="uQb-Ak-N9D"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="dPv-YH-rbJ" secondAttribute="bottom" constant="4" id="wJC-XT-2vO"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="HQp-wL-op2" secondAttribute="trailing" id="nZ0-iQ-Lxf"/>
+                                    <constraint firstAttribute="bottom" secondItem="HQp-wL-op2" secondAttribute="bottom" id="sjM-6W-3kb"/>
+                                    <constraint firstItem="HQp-wL-op2" firstAttribute="leading" secondItem="WUa-QL-pYH" secondAttribute="leading" id="zpp-Xg-01Y"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="WUa-QL-pYH" secondAttribute="trailing" id="8si-2u-TVZ"/>
+                            <constraint firstItem="WUa-QL-pYH" firstAttribute="leading" secondItem="c6R-ko-P8X" secondAttribute="leading" id="9h0-GK-6p7"/>
+                            <constraint firstItem="WUa-QL-pYH" firstAttribute="bottom" secondItem="FhV-JK-Iki" secondAttribute="top" id="WzN-bd-ZGe"/>
+                            <constraint firstItem="WUa-QL-pYH" firstAttribute="top" secondItem="c6R-ko-P8X" secondAttribute="top" id="aTy-qg-0Dg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cameraStateInfoLabel" destination="UmD-gx-zXk" id="ThT-kl-LoZ"/>
+                        <outlet property="controlsContainerView" destination="HQp-wL-op2" id="n5v-fk-AG8"/>
+                        <outlet property="mapView" destination="dPv-YH-rbJ" id="2Hd-6R-lkH"/>
+                        <outlet property="sceneView" destination="WUa-QL-pYH" id="IpQ-7T-XVr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bGe-3n-lne" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="13.6" y="98.50074962518741"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="crosshairs" width="16" height="16"/>
+    </resources>
+</document>
